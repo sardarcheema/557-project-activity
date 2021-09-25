@@ -1,0 +1,135 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: 100%;
+  width: 100%;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* To contain all components*/
+.outside {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  margin-bottom: 0px;
+  justify-content: center;
+  align-items: center;
+  background-color: purple;
+}
+
+/* Flex box to contain image and text boxes */
+.box{
+	display: flex;
+  max-height: 205px;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  overflow: hidden;
+  background-color: aqua;
+}
+
+/* image specifications for image boxes */
+.box image{
+	width:200px;
+	height:200px;
+	border: 2px black solid;
+	padding: 10px;
+	box-sizing: border-box;
+	transition: border 2s;
+	margin-top: 1em;
+  flex-shrink: 0;
+}
+img {
+  width: 200px;
+  height: 200px;
+  border: 2px black solid;
+	padding: 10px;
+	box-sizing: border-box;
+	transition: border 2s;
+  animation-duration: 3s;
+  animation-name: slidein;
+}
+
+/* text specifications for text boxes */
+.box p{
+  font-family: 'Times New Roman', Times, serif;
+  text-shadow: 1px 1px red;
+	width:200px;
+	height:200px;
+	border: 2px black solid;
+	padding: 10px;
+	box-sizing: border-box;
+	text-align: center;
+	margin-top: 1em;
+  flex-shrink: 0;
+}
+
+/* changes for when cursor hovers over boxes */
+.box p:hover{
+	cursor: pointer;
+	font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	text-shadow: 2px 2px blue;
+	font-size: 26px ;
+	background-color: red;
+}
+.box img:hover{
+	cursor: progress;
+	border: 10px yellow solid;
+}
+
+/* animation for image boxes */
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 200%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
+/* to account for changes during resizing */
+@media all and (max-width: 1200px) and (min-width: 1001px) {
+  .image:nth-last-of-type(1){
+    display: none;
+  }
+}
+@media all and (max-width: 1000px) and (min-width: 801px) {
+  .image:nth-last-of-type(1){
+    display: none;
+  }
+  .image:nth-last-of-type(2){
+    display: none;
+  }
+}
+@media all and (max-width: 800px) and (min-width: 601px) {
+  .image:nth-last-of-type(1){
+    display: none;
+  }
+  .image:nth-last-of-type(2){
+    display: none;
+  }
+  .image:nth-last-of-type(3){
+    display: none;
+  }
+}
+@media all and (max-width: 600px) and (min-width: 401px) {
+  .image{
+    display: none;
+  }
+  .p:nth-child(3){
+    display: none;
+  }
+}
+
+/* Git test */
